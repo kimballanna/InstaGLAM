@@ -6,10 +6,22 @@
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
+                    <label class="control-label" for="name">Title</label>
                     <div class="controls">
                         <input type="text" data-ng-model="photo.name" id="name" class="form-control" placeholder="Name" required>
                     </div>
+					<label class="control-label" for="name">Description</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="photo.description" id="description" class="form-control" placeholder="Description" required>
+                    </div><br />
+					
+					<label>Selfie Type:
+					<select ng-model="orderSelfies">
+						<option value="duckFace" selected>Duck Face</option>
+						<option value="selfieStick">Selfie Stick</option>
+						<option value="bathroomSelfie">Bathroom Selfie</option>
+					</select>
+				</label><br /><br />
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Update" class="btn btn-default">

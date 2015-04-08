@@ -1,48 +1,63 @@
 <section data-ng-controller="HomeController">
-	<div class="jumbotron text-center">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-				<img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/img/brand/logo.png" />
-			</div>
-		</div>
+	<section data-ng-controller="PhotosController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Selfies</h1>
+		
+		
+		<!-- Start of Controller -->	
+
+ <!-- SEARCH AREA -->
+	 <div class="search">
+		<label>Search Selfies</lavel>
+		<input type="text" ng-model="query" >
+	
+		<label>Sort by:
+			<select ng-model="orderSelfies">
+				<option value="duckFace" selected>Duck Face</option>
+				<option value="selfieStick">Selfie Stick</option>
+				<option value="bathroomSelfie">Bathroom Selfie</option>
+			</select>
+		</label>
 		<br>
-		<div class="row">
-			<p class="lead">
-				Open-Source Full-Stack Solution For MEAN Applications
-			</p>
-		</div>
-		<div class="row">
-			<p>
-				<a class="btn btn-primary btn-lg" href="http://meanjs.org" target="_blank">Learn more</a>
-			</p>
-		</div>
+		<label>
+			<input type="radio" ng-model="direction" name="direction" checked>
+			Top Rated
+		</label>
+		<label>	
+			<input type="radio" ng-model="direction" name="direction" value="reverse" >
+			Worst of the Worst
+		</label>
 	</div>
-	<div>
-		<h2>Congrats! You've configured and ran the sample application successfully.</h2>
-		<p>MEAN.JS is a web application boilerplate, which means you should start changing everything :-)</p>
-		<p>This sample application tracks users and articles.</p>
-		<ul>
-			<li>
-				Click
-				<em>Signup</em>
-				to get started.
-			</li>
-			<li>
-				Configure your app to work with your social accounts, by editing the
-				<em>/config/env/*.js</em>
-				files.
-			</li>
-			<li>
-				Edit your users module.
-			</li>
-			<li>
-				Add new CRUD modules.
-			</li>
-			<li>
-				Have fun...
-			</li>
-		</ul>
-	</div>
+	<!--END of SEARCH AREA -->
+
+		
+		
+    </div>
+			<div>
+				<a data-ng-repeat="photo in photos" data-ng-href="#!/photos/{{photo._id}}">
+					<div class="col-md-4 text-center" style="padding-bottom:1em;">
+						<div>
+							<h4 class="list-group-item-heading" data-ng-bind="photo.name"></h4>
+							<image src="{{photo.image}}" style="max-width:300px; max-height: 190px" />
+							<small class="list-group-item-text">
+							<br />
+								Posted on
+								<span data-ng-bind="photo.created | date:'medium'"></span><br />
+								by
+								<span data-ng-bind="photo.user.displayName"></span>
+							</small>
+						</div>	
+					</div>
+				</a>
+			</div>
+			
+	
+    <div class="alert alert-warning text-center" data-ng-hide="!photos.$resolved || photos.length">
+    	No selfies yet, why don't you pucker those lips and <a href="/#!/photos/create">take one</a>?
+    </div>
+	</section>
+	
+	<!--
 	<div class="row">
 		<div class="col-md-3">
 			<h2>
@@ -69,6 +84,7 @@
 			<p><a target="_blank" href="http://nodejs.org/">Node.js</a> is a web server. Node's website and this <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">stackOverflow thread</a> offer excellent starting points to get to grasps with node.</p>
 		</div>
 	</div>
+	
 	<div class="well">
 		<h2>MEAN.JS Documentation</h2>
 		<p>
@@ -91,4 +107,5 @@
 	</div>
 	<br>Enjoy &amp; Keep Us Updated,
 	<br>The MEAN.JS Team.
+	-->
 </section>
