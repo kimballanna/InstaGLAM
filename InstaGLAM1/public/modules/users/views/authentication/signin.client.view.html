@@ -1,3 +1,30 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+/*fonts:
+font-family: 'Playfair Display SC', serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Anton', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Playball', cursive;
+*/
+	
+	#lables{
+		font-family: 'Playfair Display SC', serif;
+	}
+	#signup_btn{
+		font-family: 'Playfair Display SC', serif;
+		background-color:#000000;
+		color:#fce757
+	}
+	 #form_place{
+		font-family: 'Playball', cursive;
+	}
+	h3{
+		font-family: 'Playfair Display SC', serif;
+		font-weight:bolder;
+	}
+
+</style>
 <section class="row" data-ng-controller="AuthenticationController">
 	<h3 class="col-md-12 text-center">Sign in through social media</h3>
 	<div class="col-md-12 text-center">
@@ -18,8 +45,8 @@
 					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
 				</div>
 				<div class="text-center form-group">
-					<button type="submit" class="btn btn-primary">Sign in</button>&nbsp; or&nbsp;
-					<a href="/#!/signup">Sign up</a>
+					<button type="submit" class="btn btn-primary" id="signup_btn">Sign in</button>&nbsp; or&nbsp;
+					<a href="/#!/signup"><font color="#000000" style="text-decoration:underline">Sign up</font></a>
 				</div>
 				<div class="forgot-password">
 					<a href="/#!/password/forgot">Forgot your password?</a>
