@@ -1,3 +1,17 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+
+#btn-like{
+	font-family: 'Playfair Display SC', serif;
+	background-color:black; 
+	color:#fce757; 
+	float:left; 
+}
+h2{
+	font-family: 'Playfair Display SC', serif;
+}
+
+</style>
 <!-- Custom CSS -->
     <link href="/public/lib/bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
 	<link href="mystyles.css" rel="stylesheet">
@@ -25,15 +39,24 @@
 		<div>
 		<h2>
 			Likes: <span data-ng-bind="photo.likes"></span>
+			Dislikes: <span data-ng-bind="photo.likes"></span>
 			Views: <span data-ng-bind="photo.views"></span>
 		</h2>
 		</div>
 		<div>
 		<h2>
-			<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ image.uniqueId }}"><i class="fa fa-heart">Like</i></button>
+			<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ image.uniqueId }}" ><i class="fa fa-thumbs-o-up"><font style ="font-family: 'Playfair Display SC', serif">Like</style></i></button>
+			
+		</h2>
+		</div><div>
+		<h2>
+			<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ image.uniqueId }}"  style="background-color:black; color:#fce757"><i class="fa fa-thumbs-o-down"><font style ="font-family: 'Playfair Display SC', serif">Dislike</style></i></button>
 			
 		</h2>
 		</div>
+		<br>
+		<br>
+
 		<div class="page-body" style="display:inline-block; text-align:left; float:left;">
 			<image ng-src="{{photo.image}}" style="max-width:700px;"/>
 		</div>
