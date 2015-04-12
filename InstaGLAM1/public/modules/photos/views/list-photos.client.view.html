@@ -1,3 +1,37 @@
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<style>
+/*fonts:
+font-family: 'Playfair Display SC', serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Anton', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Playball', cursive;
+*/
+   span{
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    #nav_links:hover{
+        color:#fce757;
+    }
+    
+     h1{
+        font-family: 'Playball', serif;
+        color:black;
+    }
+    
+    h4{
+        font-family: 'Playfair Display SC', serif;
+    }
+    h5{
+        font-family: 'Playfair Display SC', serif;
+    }
+    li{
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+</style>
 <section data-ng-controller="PhotosController" data-ng-init="find()">
     <div class="page-header">
         <h1>Photos</h1>
@@ -5,7 +39,7 @@
     <div class="list-group">
         <a data-ng-repeat="photo in photos" data-ng-href="#!/photos/{{photo._id}}" class="list-group-item">
 			<small class="list-group-item-text">
-				Posted on
+				<h5>Posted on</h5>
 				<span data-ng-bind="photo.created | date:'medium'"></span>
 				by
 				<span data-ng-bind="photo.user.displayName"></span>

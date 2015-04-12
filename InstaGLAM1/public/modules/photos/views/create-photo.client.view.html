@@ -1,3 +1,52 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<style>
+/*fonts:
+font-family: 'Playfair Display SC', serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Anton', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Playball', cursive;
+*/
+   span{
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    #nav_links:hover{
+        color:#fce757;
+    }
+    
+    h1{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+    .form-control{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+    .dropDown{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+    
+    #control-label{
+        font-family: 'Playfair Display SC', serif;
+    }
+    h5{
+        font-family: 'Playfair Display SC', serif;
+    }
+    li{
+        font-family: 'Playfair Display SC', serif;
+    }
+    select{
+        font-family: 'Playfair Display SC', serif;
+    }
+    .btn-default{
+    	"font-family: 'Playfair Display SC', serif;
+    }
+    </style>
+
+
 	<link href="../instagram-filter-app/assets/css/style.css" rel="stylesheet" />
 	<!-- Libraries -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -15,22 +64,23 @@
         <form class="form-horizontal" action="photos/" method="post" enctype="multipart/form-data" novalidate>
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="name">Title</label>
+                    <label class="control-label" for="name"><h5>Title</h5></label>
                     <div class="controls">
                         <input type="text" name="name" class="form-control" placeholder="Title" required>
                     </div>
                 </div>
 				<div class="form-group">
-                    <label class="control-label" for="name">Description</label>
+                    <label class="control-label" for="name"><h5>Description</h5></label>
                     <div class="controls">
                         <input type="text" name="description" class="form-control" placeholder="Description" required>
                     </div><br />
 					
-					<label>Selfie Type:
-					<select ng-model="orderSelfies">
+					<label ><h5>Selfie Type:</h5>
+					<select ng-model="orderSelfies" ><font style="font-family: 'Playfair Display SC', serif;">
 						<option value="duckFace" selected>Duck Face</option>
 						<option value="selfieStick">Selfie Stick</option>
 						<option value="bathroomSelfie">Bathroom Selfie</option>
+						</font>
 					</select>
 				</label><br /><br />
 				<input type="file" name="image" data-ng-model="imageHolder.image" id="image" accept="image/*" required/><br/>
@@ -85,7 +135,7 @@ section, footer, header{
 -----------------------------*/
 
 
-h1{
+/*h1{
 	font: 48px/1 'Yanone Kaffeesatz', sans-serif;
 	font-weight:200;
 	color:#000;
@@ -98,7 +148,7 @@ h1{
 h1 b{
 	font-weight:400;
 }
-
+*/
 
 /*----------------------------
 	The Photo
@@ -418,7 +468,7 @@ footer h2 i{
 				
 				
                 <div class="form-group">
-                    <input type="submit" class="btn btn-default">
+                    <input type="submit" class="btn btn-default" style="color:gold; font-family:'Playfair Display SC', serif; background-color: black;">
                 </div>
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
