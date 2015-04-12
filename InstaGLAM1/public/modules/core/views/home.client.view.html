@@ -1,3 +1,30 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+/*fonts:
+font-family: 'Playfair Display SC', serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Anton', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Playball', cursive;
+*/
+	#pic_info{
+		font-family: 'Lobster', cursive;
+	}
+	
+	#username{
+		color:#fce757;
+		font-family: 'Playball', cursive;
+	}
+	
+	#label{
+		font-family: 'Playfair Display SC', serif;
+	}
+	h1{
+		color:#000000;
+		font-family: 'Playball', cursive;
+	}
+</style>
+
 <section data-ng-controller="HomeController">
 	<section data-ng-controller="PhotosController" data-ng-init="find()">
     <div class="page-header">
@@ -8,7 +35,7 @@
 
  <!-- SEARCH AREA -->
 	 <div class="search">
-		<label>Search Selfies</lavel>
+		<label id="label">Search Selfies</lavel>
 		<input type="text" ng-model="query" >
 	
 		<label>Sort by:
@@ -35,11 +62,11 @@
     </div>
 			<div>
 				<a data-ng-repeat="photo in photos" data-ng-href="#!/photos/{{photo._id}}">
-					<div class="col-md-4 text-center" style="padding-bottom:1em;">
+					<div class="col-md-4 text-center" style="padding-bottom:1em;" id="label">
 						<div>
 							<h4 class="list-group-item-heading" data-ng-bind="photo.name"></h4>
 							<image src="{{photo.image}}" style="max-width:300px; max-height: 190px" />
-							<small class="list-group-item-text">
+							<small class="list-group-item-text" id="pic_info">
 							<br />
 								Posted on
 								<span data-ng-bind="photo.created | date:'medium'"></span><br />
