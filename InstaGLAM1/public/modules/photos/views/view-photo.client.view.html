@@ -39,7 +39,7 @@ h2{
 		<div>
 		<h2>
 			Likes: <span data-ng-bind="photo.likes"></span>
-			Dislikes: <span data-ng-bind="photo.likes"></span>
+			Dislikes: <span data-ng-bind="photo.dislikes"></span>
 			Views: <span data-ng-bind="photo.views"></span>
 		</h2>
 		</div>
@@ -50,7 +50,7 @@ h2{
 		</h2>
 		</div><div>
 		<h2>
-			<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ image.uniqueId }}"  style="background-color:black; color:#fce757"><i class="fa fa-trash"><font style ="font-family: 'Playfair Display SC', serif">Trashy</style></i></button>
+			<button class="btn btn-success" ng-click="dislikeThis()" id="btn-dislike" data-id="{{ image.uniqueId }}"  style="background-color:black; color:#fce757"><i class="fa fa-trash"><font style ="font-family: 'Playfair Display SC', serif">Trashy</style></i></button>
 			
 		</h2>
 		</div>

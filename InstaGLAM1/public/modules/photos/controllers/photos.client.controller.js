@@ -9,8 +9,11 @@ angular.module('photos').controller('PhotosController', ['$scope', '$stateParams
 		$scope.create = function() {
 			// Create new Photo object
 			var photo = new Photos ({
-			  name: this.name
+			  name: this.name,
+			  //Desciption test
+			  //description: this.description
 			});
+			
 		  photo.$save(function(response) {
 		    $location.path('photos/' + response._id);
 
@@ -69,6 +72,21 @@ angular.module('photos').controller('PhotosController', ['$scope', '$stateParams
 			var photo = $scope.photo;
 			
 			console.log('like function called');
+			//saves the photo -- note the authorization problem in this version
+			photo.$update(function() {
+				$location.path('photos/' + photo._id);
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
+		};
+		
+		//Dislike a photo
+		$scope.dislikeThis = function() {
+			$scope.photo.dislikes +=1;
+			var photo = $scope.photo;
+			//var dislikePhoto = Math.max.apply(Math, $scope.photo.dislikes);
+			var dislikePhoto = Math.max.apply(null, this);
+			console.log('dislike function called');
 			//saves the photo -- note the authorization problem in this version
 			photo.$update(function() {
 				$location.path('photos/' + photo._id);
