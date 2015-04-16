@@ -13,20 +13,21 @@ var init = require('./config/init')(),
  */
 
 // Bootstrap db connection
-/*Original setup
+//Original setup
 var db = mongoose.connect(config.db.uri, config.db.options, function(err) {
 	if (err) {
 		console.error(chalk.red('Could not connect to MongoDB!'));
 		console.log(chalk.red(err));
 	}
-}); */
+}); 
 //New setup
+/*
 var db = mongoose.connect(config.db, function(err) {
 	if (err) {
 		console.error(chalk.red('Could not connect to MongoDB!'));
 		console.log(chalk.red(err));
 	}
-});
+});*/
 
 /*
 mongoose.connection.on('error', function(err) {
@@ -43,9 +44,9 @@ require('./config/passport')();
 
 // Start the app by listening on <port>
 //Original
-//app.listen(config.port);
+app.listen(config.port);
 //For socketsio, but crashes site
-app.get('server').listen(config.port);
+//app.get('server').listen(config.port);
 
 // Expose app
 exports = module.exports = app;
