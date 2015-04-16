@@ -44,6 +44,7 @@ exports.read = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else 
+			
 			res.jsonp(req.photo);
 		});
 };
@@ -62,6 +63,10 @@ exports.update = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			// tackle out socket instance from the app container
+			//var socketio = req.app.get('socketio'); 
+			// emit an event for all connected clients
+			//socketio.sockets.emit('photo.created', photo); 
 			res.jsonp(photo);
 		}
 	});

@@ -1,8 +1,8 @@
 'use strict';
 
 
-angular.module('photos').controller('PhotosController', ['$scope', '$stateParams', '$location', 'Authentication', 'Photos', 
-	function($scope, $stateParams, $location, Authentication, Photos) {
+angular.module('photos').controller('PhotosController', ['$scope', '$stateParams', '$location', /*'Socket',*/ 'Authentication', 'Photos', 
+	function($scope, $stateParams, $location, /*Socket,*/ Authentication, Photos) {
 	  $scope.authentication = Authentication;
 
 		// Create new Photo
@@ -26,7 +26,11 @@ angular.module('photos').controller('PhotosController', ['$scope', '$stateParams
 		     });
                   
 		};
-
+		/*
+		Socket.on('photo.created', function(photo) {
+			console.log("Photo Created" + photo);
+		});
+*/
 		// Remove existing Photo
 		$scope.remove = function(photo) {
 			if ( photo ) { 
@@ -85,7 +89,7 @@ angular.module('photos').controller('PhotosController', ['$scope', '$stateParams
 			$scope.photo.dislikes +=1;
 			var photo = $scope.photo;
 			//var dislikePhoto = Math.max.apply(Math, $scope.photo.dislikes);
-			var dislikePhoto = Math.max.apply(null, this);
+			
 			console.log('dislike function called');
 			//saves the photo -- note the authorization problem in this version
 			photo.$update(function() {
