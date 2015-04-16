@@ -6,6 +6,7 @@
 var fs = require('fs'),
 	http = require('http'),
 	https = require('https'),
+	socketio = require('socket.io'),
 	express = require('express'),
 	morgan = require('morgan'),
 	logger = require('./logger'),
@@ -160,6 +161,12 @@ module.exports = function(db) {
 		return httpsServer;
 	}
 
+	// Attach Socket.io
+	var server = http.createServer(app);
+	var io = socketio.listen(server);
+	app.set('socketio', io);
+	app.set('server', server);
+	
 	// Return Express server instance
 	return app;
 };
