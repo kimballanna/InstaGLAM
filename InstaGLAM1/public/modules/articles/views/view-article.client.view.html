@@ -1,27 +1,8 @@
-<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
-<style>
-
-#btn-like{
-	font-family: 'Playfair Display SC', serif;
-	background-color:black; 
-	color:#fce757; 
-	float:left; 
-}
-h2{
-	font-family: 'Playfair Display SC', serif;
-}
-h1{
-    	font-family: 'Playball', serif;
-    	color:black;
-    }
-
-</style>
-
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
 	<div class="page-header">
 		<h1 data-ng-bind="article.title"></h1>
 	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == article.user._id">
+	<div class="pull-right" data-ng-show="authentication.user._id == article.user._id">xo
 		<a class="btn btn-primary" href="/#!/articles/{{article._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
 		</a>

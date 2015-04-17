@@ -3,8 +3,9 @@
 // Init the application configuration module for AngularJS application
 var ApplicationConfiguration = (function() {
 	// Init module configuration options
-	var applicationModuleName = 'mean';
-	var applicationModuleVendorDependencies = ['ngResource', 'ngAnimate', 'ui.router', 'ui.bootstrap', 'ui.utils'/*, 'btford.socket-io'*/];
+	var applicationModuleName = 'meansocket';
+	// Add socket dependency here
+	var applicationModuleVendorDependencies = ['ngResource', 'ngCookies',  'ngAnimate',  'ngTouch',  'ngSanitize',  'ui.router', 'ui.bootstrap', 'ui.utils', 'btford.socket-io'];
 
 	// Add a new vertical module
 	var registerModule = function(moduleName, dependencies) {
