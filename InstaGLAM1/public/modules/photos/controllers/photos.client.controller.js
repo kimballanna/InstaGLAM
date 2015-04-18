@@ -1,8 +1,8 @@
 'use strict';
 
 
-angular.module('photos').controller('PhotosController', ['$scope', '$stateParams', '$location', /*'Socket',*/ 'Authentication', 'Photos', 
-	function($scope, $stateParams, $location, /*Socket,*/ Authentication, Photos) {
+angular.module('photos').controller('PhotosController', ['$scope', '$stateParams', '$location', 'Authentication', 'Socket', 'Photos', 
+	function($scope, $stateParams, $location, Authentication, Socket, Photos) {
 	  $scope.authentication = Authentication;
 
 		// Create new Photo

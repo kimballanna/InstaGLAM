@@ -28,7 +28,11 @@ exports.create = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			var socketio = req.app.get('socketio'); // makes a socket instance
+			socketio.emit('photo.created', photo); // sends the socket event to all current users
+
 			res.redirect('/#!/photos/'+photo._id); // redirection to '/'jsonp(photo);
+			
 		}
 	});
 };

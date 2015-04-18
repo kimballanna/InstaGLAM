@@ -17,8 +17,10 @@ h2{
 	<link href="mystyles.css" rel="stylesheet">
 
 <section data-ng-controller="PhotosController" data-ng-init="findOne()">
+	<div ng-show="myValue2" class="ng-hide" style="color:black"> New Photo Posted! </div>
+
 	<div class="page-header">
-		<h1 data-ng-bind="photo.name"></h1>
+		<h1 data-ng-bind="photo.name" style="color:black"></h1>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == photo.user._id))">
 		<a class="btn btn-primary" href="/#!/photos/{{photo._id}}/edit">

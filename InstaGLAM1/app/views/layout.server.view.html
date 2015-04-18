@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<title>{{title}}</title>
+	<title>InstaGLAM</title>
 
 	<!-- General META -->
 	<meta charset="utf-8">
@@ -47,6 +47,7 @@
 	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 	<section class="content">
 	<div ng-show="myValue" class="ng-hide"> New Article Posted! </div>
+	<div ng-show="myValue2" class="ng-hide" style="color:black"> New Photo Posted! </div>
 		<section class="container">
 			{% block content %}{% endblock %}
 		</section>
