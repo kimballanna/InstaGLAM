@@ -1,6 +1,40 @@
+	  
 <section class="row" data-ng-controller="SettingsController">
 	<h3 class="col-md-12 text-center">Edit your profile</h3>
-	<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
+	<div class="col-md-5" style="float:left; display:inline-block;">
+		<h3>Profile Picture</h3>
+		
+		
+		
+		<div flow-init="{singleFile:true}"
+			 flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+			<h3>
+			<a name="image-example" class="anchor" href="#image-example"><span class="octicon octicon-link"></span></a>Single Image upload</h3>
+			<div class="thumbnail" ng-show="!$flow.files.length">
+			  <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" />
+			</div>
+			<div class="thumbnail" ng-show="$flow.files.length">
+			  <img flow-img="$flow.files[0]" />
+			</div>
+			<div>
+				<input type="file" accept="public/uploads/*" image="image" flow-btn/>
+			  <span class="btn btn-primary" ng-show="!$flow.files.length" flow-btn>Select image</span>
+			  <span class="btn btn-info" ng-show="$flow.files.length" flow-btn>Change</span>
+			  <span class="btn btn-danger" ng-show="$flow.files.length"
+				 ng-click="$flow.cancel()">
+				Remove
+			  </span>
+			</div>
+			<p>
+			  Only PNG,GIF,JPG,JEPG files allowed.
+			</p>
+			
+<img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" />
+		</div>		
+	</div>
+
+  
+	<div class="col-xs-offset-2 col-xs-8 col-md-offset-8 col-md-5" style="float:left; display:inline-block;">
 		<form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
 			<fieldset>
 				<div class="form-group">
